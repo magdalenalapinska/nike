@@ -1,7 +1,8 @@
 import Button from "../components/Button";
 import { arrowRight } from "../assets/icons";
-import { statistics } from "../constants";
+import { shoes, statistics } from "../constants";
 import { bigShoe1 } from "../assets/images";
+import ShoeCard from "../components/ShoeCard";
 
 const Hero = () => {
   return (
@@ -24,6 +25,7 @@ const Hero = () => {
           Discover stylish Nike arrivals, quality comfort, and innovation for
           your active life.
         </p>
+
         <Button label="Shop now" iconUrl={arrowRight}></Button>
 
         <div className="flex justify-starts items-starts flex-wrap w-full mt-20 gap-16">
@@ -46,6 +48,14 @@ const Hero = () => {
           height={500}
           className="object-contain relative z-10"
         />
+      </div>
+
+      <div>
+        {shoes.map((shoe, index) => (
+          <div key={index}>
+            <ShoeCard />
+          </div>
+        ))}
       </div>
     </section>
   );
